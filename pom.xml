@@ -33,7 +33,7 @@
   <artifactId>application-classification</artifactId>
   <packaging>xar</packaging>
   <name>Classification Application</name>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <description>Enables to create hierarchies</description>
   <developers>
     <developer>
@@ -44,7 +44,8 @@
    <connection>scm:git:git://github.com/xwiki-contrib/application-classification.git</connection>
    <developerConnection>scm:git:git@github.com:xwiki-contrib/application-classification.git</developerConnection>
    <url>https://github.com/xwiki-contrib/application-classification</url>
- </scm>
+   <tag>application-classification-1.0</tag>
+  </scm>
  <distributionManagement>
    <repository>
      <id>xwiki-staging</id>

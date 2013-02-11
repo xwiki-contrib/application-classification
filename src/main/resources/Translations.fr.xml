@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+  <web>ClassificationCode</web>
+  <name>Translations</name>
+  <language>fr</language>
+  <defaultLanguage/>
+  <translation>1</translation>
+  <parent>ClassificationCode.WebHome</parent>
+  <creator>xwiki:XWiki.Admin</creator>
+  <author>xwiki:XWiki.Admin</author>
+  <customClass/>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <creationDate>1360328494000</creationDate>
+  <date>1360328494000</date>
+  <contentUpdateDate>1360328494000</contentUpdateDate>
+  <version>1.1</version>
+  <title/>
+  <template/>
+  <defaultTemplate/>
+  <validationScript/>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>false</hidden>
+  <content>classification.entries.doc.date=Dernière modification
+classification.entries.doc.creationDate=Date de création
+classification.entries.doc.author=Auteur
+classification.entries.doc.title=Entrées
+classification.entries._actions=Actions
+
+classification.themes.doc.date=Dernière modification
+classification.themes.doc.creationDate=Date de création
+classification.themes.doc.author=Auteur
+classification.themes.doc.title=Thèmes
+classification.themes._actions=Actions
+
+classification.underThemes.doc.date=Dernière modification
+classification.underThemes.doc.creationDate=Date de création
+classification.underThemes.doc.author=Auteur
+classification.underThemes.doc.title=Sous-thèmes
+classification.underThemes._actions=Actions
+
+classification.category.doc.date=Dernière modification
+classification.category.doc.creationDate=Date de création
+classification.category.doc.author=Auteur
+classification.category.doc.title=Catégorie
+classification.category._actions=Actions
+
+classification.addEntry=Créer une nouvelle entrée de niveau 1
+classification.addTheme=Ajouter un thème à cette entrée
+classification.addUnderTheme=Ajouter un sous-thème à ce thème
+classification.addUnderCategory=Ajouter une sous-catégorie
+
+classification.alreadyExist=Ce plan de classement contient déjà un document intitulé  {0}  .
+
+classification.templateProvider.title=Nouveau plan de classement
+
+classification.title=Titre de cette page</content>
+</xwikidoc>

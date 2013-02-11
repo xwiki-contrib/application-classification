@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xwikidoc>
+  <web>ClassificationCode</web>
+  <name>CategorySheet</name>
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <parent>ClassificationCode.CategoryClass</parent>
+  <creator>xwiki:XWiki.Admin</creator>
+  <author>xwiki:XWiki.Admin</author>
+  <customClass/>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <creationDate>1358441444000</creationDate>
+  <date>1360321543000</date>
+  <contentUpdateDate>1360321543000</contentUpdateDate>
+  <version>1.1</version>
+  <title>#if($doc.name == 'CategorySheet')Category Sheet#{else}$services.display.title($doc, {'displayerHint': 'default'})#end</title>
+  <template/>
+  <defaultTemplate/>
+  <validationScript/>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>false</hidden>
+  <content>{{velocity}}
+#set($space = $doc.space)
+#if($request.newDoc)
+  $doc.save()
+  $response.sendRedirect($doc.getURL('view'))
+#elseif($request.theme)
+  #if($xwiki.exists("${space}.${request.theme}"))
+    {{error}}$msg.get('classification.alreadyExist',[$request.theme]){{/error}}
+  #else
+    #set($newTheme = $services.model.createDocumentReference('', "$space", "$request.theme"))
+    $response.sendRedirect($xwiki.getURL($newTheme, 'edit', "$!{request.queryString}&amp;newDoc=true"))
+  #end
+#elseif($request.underTheme)
+  #if($xwiki.exists("${space}.${request.underTheme}"))
+    {{error}}$msg.get('classification.alreadyExist', [${request.underTheme}]){{/error}}
+  #else
+    #set($newUnderTheme = $services.model.createDocumentReference('', "$space", "$request.underTheme"))
+    $response.sendRedirect($xwiki.getURL($newUnderTheme, 'edit', "$!{request.queryString}&amp;newDoc=true"))
+  #end
+#end
+
+#if ($xcontext.action == "edit" || $xcontext.action == "inline")
+  #set($titlePrettyName = $msg.get('classification.title'))
+  #set($titleId = "${class.name}_0_title")
+  ; $titlePrettyName
+  : {{html}}&lt;input name='title' type="text" value="$!{escapetool.xml($doc.title)}" id="$titleId" /&gt;{{/html}}
+#else
+
+  {{html}}
+    &lt;form action='' class="xformInline"&gt;
+      &lt;input type="hidden" name="parent" value="${space}.${doc.name}" /&gt;
+      &lt;input type='hidden' name='template' value='ClassificationCode.CategoryTemplate'/&gt;
+      &lt;input type='text' size='30' name='theme'/&gt;
+      &lt;span class='buttonwrapper'&gt;
+        &lt;input type='submit' class='button' value="$msg.get('classification.addUnderCategory')"/&gt;
+      &lt;/span&gt;
+    &lt;/form&gt;  
+  {{/html}}
+
+  #set($columns = ["doc.title", "doc.date", "doc.creationDate", "doc.author", "_actions"])
+  #set($columnsProperties = {
+     "doc.title" : {"type" : "text", "link" : "view"},
+     '_actions': {'html': true, 'sortable': false, 'actions': ['rename', 'delete']}
+  })
+  #set($options = { 
+    "className":"ClassificationCode.CategoryClass",
+    "extraParams" : "&amp;parent=$doc", 
+    "translationPrefix" : "classification.category.",
+    "tagCloud" : true,
+    "rowCount": 10
+  })     
+  #livetable("themes" $columns $columnsProperties $options) 
+
+#end
+{{/velocity}}</content>
+</xwikidoc>

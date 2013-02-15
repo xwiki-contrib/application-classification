@@ -26,11 +26,6 @@
   <content>{{velocity}}
 #set($space = $doc.space)
 #if($request.newDoc)
-  #if($request.entry)
-    $doc.setTitle($request.entry)
-  #elseif($request.theme)
-    $doc.setTitle($request.theme)
-  #end
   $doc.save()
   $response.sendRedirect($doc.getURL('view'))
 #elseif($request.theme)
@@ -38,7 +33,14 @@
     {{error}}$msg.get('classification.alreadyExist',[$request.theme]){{/error}}
   #else
     #set($newTheme = $services.model.createDocumentReference('', "$space", "$request.theme"))
-    $response.sendRedirect($xwiki.getURL($newTheme, 'edit', "$!{request.queryString}&newDoc=true"))
+    $response.sendRedirect($xwiki.getURL($newTheme, 'edit', "$!{request.queryString}&amp;newDoc=true"))
+  #end
+#elseif($request.underTheme)
+  #if($xwiki.exists("${space}.${request.underTheme}"))
+    {{error}}$msg.get('classification.alreadyExist', [${request.underTheme}]){{/error}}
+  #else
+    #set($newUnderTheme = $services.model.createDocumentReference('', "$space", "$request.underTheme"))
+    $response.sendRedirect($xwiki.getURL($newUnderTheme, 'edit', "$!{request.queryString}&amp;newDoc=true"))
   #end
 #end
 

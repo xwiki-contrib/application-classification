@@ -38,7 +38,7 @@
     {{error}}$msg.get('classification.alreadyExist',[$request.theme]){{/error}}
   #else
     #set($newTheme = $services.model.createDocumentReference('', "$space", "$request.theme"))
-    $response.sendRedirect($xwiki.getURL($newTheme, 'edit', "$!{request.queryString}&newDoc=true"))
+    $response.sendRedirect($xwiki.getURL($newTheme, 'edit', "$!{request.queryString}&amp;newDoc=true"))
   #end
 #end
 

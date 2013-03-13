@@ -12,8 +12,8 @@
   <customClass/>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <creationDate>1358531816000</creationDate>
-  <date>1363189492000</date>
-  <contentUpdateDate>1363189492000</contentUpdateDate>
+  <date>1363191986000</date>
+  <contentUpdateDate>1363191980000</contentUpdateDate>
   <version>1.1</version>
   <title>Translations</title>
   <template/>
@@ -23,6 +23,41 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>false</hidden>
+  <object>
+    <class>
+      <name>XWiki.TranslationDocumentClass</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <scope>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>scope</name>
+        <number>1</number>
+        <prettyName>Scope</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>GLOBAL|WIKI|USER|ON_DEMAND</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </scope>
+    </class>
+    <name>ClassificationCode.Translations</name>
+    <number>0</number>
+    <className>XWiki.TranslationDocumentClass</className>
+    <guid>4d8acb9d-240c-4982-8a5c-7da42e6ada7f</guid>
+    <property>
+      <scope>WIKI</scope>
+    </property>
+  </object>
   <content>classification.entries.doc.date=Dernière modification
 classification.entries.doc.creationDate=Date de création
 classification.entries.doc.author=Auteur

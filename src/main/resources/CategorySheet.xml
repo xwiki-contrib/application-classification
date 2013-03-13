@@ -12,8 +12,8 @@
   <customClass/>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <creationDate>1358441444000</creationDate>
-  <date>1360321543000</date>
-  <contentUpdateDate>1360321543000</contentUpdateDate>
+  <date>1363190838000</date>
+  <contentUpdateDate>1363190838000</contentUpdateDate>
   <version>1.1</version>
   <title>#if($doc.name == 'CategorySheet')Category Sheet#{else}$services.display.title($doc, {'displayerHint': 'default'})#end</title>
   <template/>
@@ -27,17 +27,20 @@
 #set($space = $doc.space)
 #if($request.newDoc)
   #if($request.entry)
-    $doc.setTitle($request.entry)
+    #set($title = $request.entry)
+    $doc.setTitle($title)
   #elseif($request.theme)
-    $doc.setTitle($request.theme)
+    #set($title = $request.theme)
+    $doc.setTitle($title)
   #end
   $doc.save()
   $response.sendRedirect($doc.getURL('view'))
 #elseif($request.theme)
-  #if($xwiki.exists("${space}.${request.theme}"))
-    {{error}}$msg.get('classification.alreadyExist',[$request.theme]){{/error}}
+  #set($title = $request.theme)
+  #if($xwiki.exists("${space}.$title"))
+    {{error}}$msg.get('classification.alreadyExist',[$title]){{/error}}
   #else
-    #set($newTheme = $services.model.createDocumentReference('', "$space", "$request.theme"))
+    #set($newTheme = $services.model.createDocumentReference('', "$space", "$title"))
     $response.sendRedirect($xwiki.getURL($newTheme, 'edit', "$!{request.queryString}&amp;newDoc=true"))
   #end
 #end

@@ -12,10 +12,10 @@
   <customClass/>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <creationDate>1358522676000</creationDate>
-  <date>1359046894000</date>
-  <contentUpdateDate>1359046894000</contentUpdateDate>
+  <date>1363190857000</date>
+  <contentUpdateDate>1363190786000</contentUpdateDate>
   <version>1.1</version>
-  <title>Classification</title>
+  <title>#if($doc.title=='')Plan de Classement#else$doc.title #end</title>
   <template/>
   <defaultTemplate/>
   <validationScript/>
@@ -26,11 +26,11 @@
   <content>{{velocity}}
 #set($space = $doc.space)
 #if($!request.entry)
-  #if($xwiki.exists("${space}.${request.entry}"))
-    {{error}}$msg.get('classification.alreadyExist',[$request.entry]){{/error}}
-
+  #set($title = ${request.entry})
+  #if($xwiki.exists("${space}.$title"))
+    {{error}}$msg.get('classification.alreadyExist',$title){{/error}}
   #else
-    #set($newEntry = $services.model.createDocumentReference('', "$space", "$request.entry"))
+    #set($newEntry = $services.model.createDocumentReference('', "$space", "$title"))
     $response.sendRedirect($xwiki.getURL($newEntry, 'edit', "$!{request.queryString}&amp;newDoc=true"))
   #end
 #end

@@ -23,7 +23,9 @@
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
   <hidden>false</hidden>
-  <content>classification.entries.doc.date=Dernière modification
+  <content>classification.defaultWebHomeTitle=Plan de Classement
+
+classification.entries.doc.date=Dernière modification
 classification.entries.doc.creationDate=Date de création
 classification.entries.doc.author=Auteur
 classification.entries.doc.title=Entrées

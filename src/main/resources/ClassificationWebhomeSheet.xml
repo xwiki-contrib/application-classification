@@ -15,7 +15,7 @@
   <date>1363190857000</date>
   <contentUpdateDate>1363190786000</contentUpdateDate>
   <version>1.1</version>
-  <title>#if($doc.title=='')Plan de Classement#else$doc.title #end</title>
+  <title>#if($doc.title=='')$msg.get('classification.defaultWebHomeTitle')#else$doc.title #end</title>
   <template/>
   <defaultTemplate/>
   <validationScript/>
@@ -27,7 +27,7 @@
 #set($space = $doc.space)
 #if($!request.entry)
   #set($title = ${request.entry})
-  #if($xwiki.exists("${space}.$title"))
+  #if($xwiki.exists("${space}.${title}"))
     {{error}}$msg.get('classification.alreadyExist',$title){{/error}}
   #else
     #set($newEntry = $services.model.createDocumentReference('', "$space", "$title"))

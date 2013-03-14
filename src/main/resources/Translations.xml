@@ -58,38 +58,40 @@
       <scope>WIKI</scope>
     </property>
   </object>
-  <content>classification.entries.doc.date=Dernière modification
-classification.entries.doc.creationDate=Date de création
-classification.entries.doc.author=Auteur
-classification.entries.doc.title=Entrées
+  <content>classification.defaultWebHomeTitle=Classification
+
+classification.entries.doc.date=Last modification
+classification.entries.doc.creationDate=Creation date
+classification.entries.doc.author=Author
+classification.entries.doc.title=Entries
 classification.entries._actions=Actions
 
-classification.themes.doc.date=Dernière modification
-classification.themes.doc.creationDate=Date de création
-classification.themes.doc.author=Auteur
-classification.themes.doc.title=Thèmes
+classification.themes.doc.date=Last modification
+classification.themes.doc.creationDate=Creation date
+classification.themes.doc.author=Author
+classification.themes.doc.title=Themes
 classification.themes._actions=Actions
 
-classification.underThemes.doc.date=Dernière modification
-classification.underThemes.doc.creationDate=Date de création
-classification.underThemes.doc.author=Auteur
-classification.underThemes.doc.title=Sous-thèmes
+classification.underThemes.doc.date=Last modification
+classification.underThemes.doc.creationDate=Creation date
+classification.underThemes.doc.author=Author
+classification.underThemes.doc.title=Under_themes
 classification.underThemes._actions=Actions
 
-classification.category.doc.date=Dernière modification
-classification.category.doc.creationDate=Date de création
-classification.category.doc.author=Auteur
-classification.category.doc.title=Catégorie
+classification.category.doc.date=Last modification
+classification.category.doc.creationDate=Creation date
+classification.category.doc.author=Author
+classification.category.doc.title=Category
 classification.category._actions=Actions
 
-classification.addEntry=Créer une nouvelle entrée de niveau 1
-classification.addTheme=Ajouter un thème à cette entrée
-classification.addUnderTheme=Ajouter un sous-thème à ce thème
-classification.addUnderCategory=Ajouter une sous-catégorie
+classification.addEntry=Add a level 1 entry
+classification.addTheme=Add a theme to this entry
+classification.addUnderTheme=Add an under-theme to this theme
+classification.addUnderCategory=Add a sub-category
 
-classification.alreadyExist=Ce plan de classement contient déjà un document intitulé ** {0} ** .
+classification.alreadyExist=This classification already contains a document named  {0}  .
 
-classification.templateProvider.title=Nouveau plan de classement
+classification.templateProvider.title=New classification
 
-classification.title=Titre de cette page</content>
+classification.title=Page title</content>
 </xwikidoc>

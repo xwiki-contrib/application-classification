@@ -66,7 +66,7 @@
   #set($columns = ["doc.title", "doc.date", "doc.creationDate", "doc.author", "_actions"])
   #set($columnsProperties = {
      "doc.title" : {"type" : "text", "link" : "view"},
-     '_actions': {'html': true, 'sortable': false, 'actions': ['rename', 'delete']}
+     '_actions': {'html': true, 'sortable': false, 'actions': ['edit']}
   })
   #set($options = { 
     "className":"ClassificationCode.CategoryClass",

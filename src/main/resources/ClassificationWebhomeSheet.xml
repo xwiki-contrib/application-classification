@@ -25,6 +25,7 @@
   <hidden>false</hidden>
   <content>{{velocity}}
 #set($space = $doc.space)
+#if($hasEdit)
 #if($!request.entry)
   #set($title = ${request.entry})
   #if($xwiki.exists("${space}.${title}"))
@@ -47,6 +48,7 @@
   &lt;/form&gt;  
 {{/html}}
 
+#end
 #set($columnsProperties = {
    "doc.title" : {"type" : "text", "link" : "view"},
   '_actions': {'html': true, 'sortable': false, 'actions': ['edit']}

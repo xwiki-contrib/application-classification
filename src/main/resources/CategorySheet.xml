@@ -25,6 +25,7 @@
   <hidden>false</hidden>
   <content>{{velocity}}
 #set($space = $doc.space)
+#if($hasEdit)
 #if($request.newDoc)
   #if($request.entry)
     #set($title = $request.entry)
@@ -44,13 +45,14 @@
     $response.sendRedirect($xwiki.getURL($newTheme, 'edit', "$!{request.queryString}&amp;newDoc=true"))
   #end
 #end
-
+#end
 #if ($xcontext.action == "edit" || $xcontext.action == "inline")
   #set($titlePrettyName = $msg.get('classification.title'))
   #set($titleId = "${class.name}_0_title")
   ; $titlePrettyName
   : {{html}}&lt;input name='title' type="text" value="$!{escapetool.xml($doc.title)}" id="$titleId" /&gt;{{/html}}
 #else
+  #if($hasEdit)
 
   {{html}}
     &lt;form action='' class="xformInline"&gt;
@@ -63,6 +65,7 @@
     &lt;/form&gt;  
   {{/html}}
 
+  #end
   #set($columns = ["doc.title", "doc.date", "doc.creationDate", "doc.author", "_actions"])
   #set($columnsProperties = {
      "doc.title" : {"type" : "text", "link" : "view"},
